@@ -30,7 +30,12 @@ float human::BMI(void) const {
 float human::fighting_index(void) const {
     return strength * 0.04 + battle_iq * 0.04 + weight/425 - abs(26-weight/height/height)/100;
 }
-
+class boxer: human  { //polymorphism, inherits from parent class human
+    private:
+        float punching; //unique value alongside inherited values
+    public:
+        void fighting_index(void) const; //overrides human's fighting index function
+}
 int main() {
     float strength, battle_iq, height, weight;
     //setting accuracy to 3 decimal places
